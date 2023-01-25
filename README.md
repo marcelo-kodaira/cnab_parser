@@ -1,6 +1,7 @@
-# CNAB_parsing
+# CNAB Parser
 
- O objetivo do programa é parsear arquivo de texto(CNAB) e salvar suas informações(transações financeiras) em uma base de dados a critério do candidato
+ "CNBA Parser" é um programa desenvolvido em python e Django que tem como objetivo processar arquivos CNAB (padrão utilizado para arquivos de remessa e retorno bancário). Ele fornece uma interface simples para que usuários possam fazer upload de arquivos CNAB, e então exibe informações estruturadas sobre as empresas e operações presentes no arquivo.
+ Com isso, é possível ter uma visão geral das transações realizadas, bem como informações sobre as empresas envolvidas, tornando-se uma ferramenta útil para gerenciamento de dados financeiros.
  
  # Instalação
  1. Criar ambiente virtual
