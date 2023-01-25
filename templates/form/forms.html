@@ -1,0 +1,63 @@
+{% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>CNBA PARSING</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            <label for="file">Faça o upload do seu arquivo</label>
+            <input type="file" name="file" id="file">
+            <button type="submit">Enviar</button>
+        </form>
+        {% if empresas %}
+        <div class="iwd">
+            <h2>Empresas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da Loja</th>
+                        <th>Saldo em conta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for empresa in empresas %}
+                        <tr>
+                            <td>{{ empresa.nome_loja }}</td>
+                            <td>{{ empresa.saldo }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2>Operações Importadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Natureza</th>
+                        <th>Loja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for operacao in operacoes %}
+                        <tr>
+                            <td>{{ operacao.data }}</td>
+                            <td>{{ operacao.valor }}</td>
+                            <td>{{ operacao.natureza }}</td>
+                            <td>{{ operacao.nome_loja }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+</body>
+</html>
