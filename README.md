@@ -9,7 +9,7 @@
 python -m venv venv
 ```
 
-2. Ativar seu venv:
+2. Ativar venv:
 ```bash
 
 # linux:
