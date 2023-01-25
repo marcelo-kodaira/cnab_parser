@@ -10,7 +10,6 @@
         <h1>CNBA PARSING</h1>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <!-- {{ form.as_p }} -->
             <label for="file">Faça o upload do seu arquivo</label>
             <input type="file" name="file" id="file">
             <button type="submit">Enviar</button>

@@ -70,7 +70,7 @@ class CNABView(APIView):
                 natureza = "Saida"
                 sinal = "-"
 
-            hora_utc = datetime.strptime(hora, '%H:%M:%S').replace(tzinfo=pytz.timezone('UTC'))
+            hora_utc = datetime.strptime(hora, '%H:%M:%S').replace(tzinfo=pytz.timezone('Brazil/East'))
 
             cnab = CNAB(tipo=tipo, descricao = descricao, data=data, valor= int(valor)/100, cpf=cpf,
                         cartao=cartao, hora=hora_utc, dono_loja=dono_loja,
